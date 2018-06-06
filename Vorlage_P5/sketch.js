@@ -68,7 +68,7 @@ function setup() {
 
 function draw() {
   background(255);
-  image(img,0,0)
+  image(imgChristoph3,0,0)
 
   backgr();
   ball();

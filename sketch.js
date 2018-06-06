@@ -35,7 +35,16 @@ let gx;
 let gy;
 let gv;
 
+//view from window
+let view;
+let imgArne3;
+let imgArne4;
+let imgArne5;
 let imgChristoph3;
+let imgChristoph4;
+let imgChristoph5;
+let imgZewen1;
+
 
 
 
@@ -56,7 +65,15 @@ function setup() {
   bp = 0;
   bd = width / 15;
   pn = 0;
+  view = random(0, 7);
+  imgArne3 = loadImage("src/Arne_3.png");
+  imgArne4 = loadImage("src/Arne_4.png");
+  imgArne5 = loadImage("src/Arne_5.png");
   imgChristoph3 = loadImage("src/Christoph_3.png");
+  imgChristoph3 = loadImage("src/Christoph_4.png");
+  imgChristoph3 = loadImage("src/Christoph_5.png");
+  imgChristoph3 = loadImage("src/Zewen_1.png");
+
 
   //für den arc befehl
   angleMode(DEGREES);
@@ -68,8 +85,7 @@ function setup() {
 
 function draw() {
   background(255);
-  image(imgChristoph3,0,0)
-
+  planeView();
   backgr();
   ball();
   fullPadel(px, py);
@@ -104,7 +120,7 @@ function draw() {
 }
 
 function backgr() { //.............................................
-//  background(255);
+  //  background(255);
   fill(200);
   noStroke();
   gv = (rotationY) / (width / 180);
@@ -200,4 +216,22 @@ function punkte() {
   noStroke();
   textStyle(BOLD);
   text(pu, x - 4 - pn, y + 30 + 3);
+}
+
+function planeView() {
+  if (view == 0) {
+    image(imgArne3, 0, 0)
+  } else if (view == 1) {
+    image(imgArne4, 0, 0)
+  } else if (view == 2) {
+    image(imgArne5, 0, 0)
+  } else if (view == 3) {
+    image(imgChristoph3, 0, 0)
+  } else if (view == 4) {
+    image(imgChristoph4, 0, 0)
+  } else if (view == 5) {
+    image(imgChristoph5, 0, 0)
+  } else {
+    image(imgZewen1, 0, 0)
+  }
 }

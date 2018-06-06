@@ -85,8 +85,7 @@ function setup() {
 
 function draw() {
   background(255);
-
-  picture();
+  planeView();
   backgr();
   ball();
   fullPadel(px, py);
@@ -131,8 +130,8 @@ function backgr() { //.............................................
   stroke(200);
   strokeWeight(width / 4);
   strokeCap(SQUARE);
-  arc(width / 2, width / 2 + width / 100, width - width / 25 + width / 4, width - width / 25 + width / 4, 180, 0);
-  arc(width / 2, height - (width / 2 + width / 100), width - width / 25 + width / 4, width - width / 25 + width / 4, 0, 180);
+  arc(width / 2, width / 2 + width / 100, width - width / 25 + width / 4 - gv, width - width / 25 + width / 4, 180, 0);
+  arc(width / 2, height - (width / 2 + width / 100), width - width / 25 + width / 4 - gv, width - width / 25 + width / 4, 0, 180);
 
 }
 
@@ -219,7 +218,7 @@ function punkte() {
   text(pu, x - 4 - pn, y + 30 + 3);
 }
 
-function view() {
+function planeView() {
   if (view == 0) {
     image(imgArne3, 0, 0)
   } else if (view == 1) {
